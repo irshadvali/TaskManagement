@@ -12,15 +12,15 @@ import Header from "./src/components/Header";
 import RestaurantList from "./src/screens/RestaurantList";
 import DetailsScreen from "./src/screens/DetailsScreen";
 import colors from "./src/utils/colors";
-import ScreenOne from "./src/screens/ScreenOne";
+import Profile from "./src/containers/ProfileContainer";
 import ScreenTwo from "./src/screens/ScreenTwo";
 import CreateTaskContainer from "./src/containers/CreateTaskContainer"
-import TaskListContainer from "./src/containers/TaskListContainer"
+import TaskList from "./src/containers/TaskListContainer"
 import TaskDetailsContainer from "./src/containers/TaskDetailsContainer"
 
 const mainStack = createStackNavigator({
-  TaskListContainer:{screen:TaskListContainer},
-  ScreenOne:{screen:ScreenOne},
+  TaskList:{screen:TaskList},
+  Profile:{screen:Profile},
   ScreenTwo:{screen:ScreenTwo},
   RestaurantList: { screen: RestaurantList }
   

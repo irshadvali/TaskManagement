@@ -42,21 +42,17 @@ export function getTaskList() {
 	return async (dispatch, getState, api) => {
 		dispatch(getCenterListRequest());
 		try {
-			console.log('irshad');
-
+			
 			const result = await api.get('tasks');
-			console.log('result', result);
+		
 			const resultJson = await result.json();
 			if (result.errorCode > 400) {
 				throw new Error(`[${result.errorCode}] ${resultJson.error.errorMessage}`);
-			} else {
-				//Toast.show("Api Call Sucess");
-			}
+			} 
 
-			console.log('tasks list ', resultJson);
 			dispatch(getCenterListSuccess(resultJson));
 		} catch (e) {
-			console.log('In CATCH BLOCK-->' + e.message);
+
 			dispatch(getCenterListFailure(e.message));
 		}
 	};
@@ -91,21 +87,17 @@ export function createTask(payload) {
 	return async (dispatch, getState, api) => {
 		dispatch(createTaskRequest());
 		try {
-			console.log('irshad');
-
+			
 			const result = await api.post('task', payload);
-			console.log('result', result);
+
 			const resultJson = await result.json();
 			if (result.errorCode > 400) {
 				throw new Error(`[${result.errorCode}] ${resultJson.error.errorMessage}`);
-			} else {
-				//Toast.show("Api Call Sucess");
-			}
+			} 
 
-			console.log('createTask', resultJson);
 			dispatch(createTaskSuccess(resultJson));
 		} catch (e) {
-			console.log('In CATCH BLOCK-->' + e.message);
+
 			dispatch(createTaskFailure(e.message));
 		}
 	};
@@ -139,21 +131,17 @@ export function updateTask(payload,taskId) {
 	return async (dispatch, getState, api) => {
 		dispatch(updateTaskRequest());
 		try {
-			console.log('irshad');
-
 			const result = await api.put(`task/${taskId}`, payload);
-			console.log('result', result);
+	
 			const resultJson = await result.json();
 			if (result.errorCode > 400) {
 				throw new Error(`[${result.errorCode}] ${resultJson.error.errorMessage}`);
-			} else {
-				//Toast.show("Api Call Sucess");
-			}
+			} 
 
-			console.log('createTask', resultJson);
+
 			dispatch(updateTaskSuccess(resultJson));
 		} catch (e) {
-			console.log('In CATCH BLOCK-->' + e.message);
+	
 			dispatch(updateTaskFailure(e.message));
 		}
 	};
@@ -189,21 +177,17 @@ export function deleteTask(taskId) {
 	return async (dispatch, getState, api) => {
 		dispatch(deleteTaskRequest());
 		try {
-			console.log('irshad');
-
+			
 			const result = await api.patch(`task/${taskId}`);
-			console.log('result', result);
+		
 			const resultJson = await result.json();
 			if (result.errorCode > 400) {
 				throw new Error(`[${result.errorCode}] ${resultJson.error.errorMessage}`);
-			} else {
-				//Toast.show("Api Call Sucess");
-			}
+			} 
 
-			console.log('createTask', resultJson);
 			dispatch(deleteTaskSuccess(resultJson));
 		} catch (e) {
-			console.log('In CATCH BLOCK-->' + e.message);
+
 			dispatch(deleteTaskFailure(e.message));
 		}
 	};

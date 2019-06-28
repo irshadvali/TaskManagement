@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Text, View,TouchableOpacity,FlatList} from "react-native";
 import styles from "../styles/DrawerStyles";
-const screensList=["TaskList","ScreenOne","ScreenTwo"];
+const screensList=["TaskList","Profile","ScreenTwo"];
 export default class DrawerScreen extends Component {
 
   onPress=(item)=>{

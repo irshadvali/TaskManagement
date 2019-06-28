@@ -40,7 +40,6 @@ import FAB from 'react-native-fab'
 
     };
     componentWillReceiveProps(nextProps){{
-        console.log(nextProps)
         if(nextProps.taskStatus==="success"){
             this.setState({
                 dataResult:nextProps.taskList

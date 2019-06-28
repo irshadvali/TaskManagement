@@ -15,6 +15,7 @@ class CreateTask extends Component {
 			taskName: '',
 			taskDescription: '',
 			location: '',
+			userId: '5d13b89918dce705ab724f76',
 		};
 	}
 
@@ -38,7 +39,7 @@ class CreateTask extends Component {
 				name: this.state.taskName,
 				description: this.state.taskDescription,
 				location: this.state.location,
-				userId: '5d13b89918dce705ab724f76',
+				userId: this.state.userId,
 			};
 			this.props.createTask(payload);
 		} else {
